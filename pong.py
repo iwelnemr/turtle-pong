@@ -16,6 +16,17 @@ class bat:
     bat.shapesize(1,5)
     bat.color("black")
 
+    def moveRight(self):
+        x = self.bat.xcor()
+        x += 15
+        self.bat.setx(x)
+
+    def moveLeft(self):
+        x = self.bat.xcor()
+        x -= 15
+        self.bat.setx(x)
+
+
     def update(self):
         pass
 
@@ -28,6 +39,12 @@ class bat2:
     bat2.sety(250)
     bat2.shapesize(1,5)
     bat2.color("black")
+
+    def moveRight(self):
+        pass
+
+    def moveLeft(self):
+        pass
 
     def update(self):
         pass
@@ -51,6 +68,10 @@ bat = bat()
 bat2 = bat2()
 ball = ball()
 
+wn.listen()
+wn.onkeypress(bat.moveRight, "Right")
+wn.onkeypress(bat.moveLeft, "Left")
 
 while True:
     wn.update()
+    
