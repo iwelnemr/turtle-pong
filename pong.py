@@ -15,15 +15,16 @@ class bat:
     bat.sety(-250)
     bat.shapesize(1,5)
     bat.color("black")
+    bat.speed = 15
 
     def moveRight(self):
         x = self.bat.xcor()
-        x += 15
+        x += self.bat.speed
         self.bat.setx(x)
 
     def moveLeft(self):
         x = self.bat.xcor()
-        x -= 15
+        x -= self.bat.speed
         self.bat.setx(x)
 
 
@@ -39,6 +40,7 @@ class bat2:
     bat2.sety(250)
     bat2.shapesize(1,5)
     bat2.color("black")
+    bat2.speed = 15
 
     def moveRight(self):
         pass
