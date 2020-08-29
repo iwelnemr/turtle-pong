@@ -33,20 +33,24 @@ class bat:
 
 
 class bat2:
-    bat2 = turtle.Turtle()
-    bat2.penup()
-    bat2.shape("square")
-    bat2.setx(0)
-    bat2.sety(250)
-    bat2.shapesize(1,5)
-    bat2.color("black")
-    bat2.speed = 15
+    bat = turtle.Turtle()
+    bat.penup()
+    bat.shape("square")
+    bat.setx(0)
+    bat.sety(250)
+    bat.shapesize(1,5)
+    bat.color("black")
+    bat.speed = 15
 
     def moveRight(self):
-        pass
+        x = self.bat.xcor()
+        x += self.bat.speed
+        self.bat.setx(x)
 
     def moveLeft(self):
-        pass
+        x = self.bat.xcor()
+        x -= self.bat.speed
+        self.bat.setx(x)
 
     def update(self):
         pass
@@ -76,4 +80,3 @@ wn.onkeypress(bat.moveLeft, "Left")
 
 while True:
     wn.update()
-    
