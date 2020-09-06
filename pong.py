@@ -62,9 +62,17 @@ class ball:
     ball.setx(0)
     ball.sety(0)
     ball.color("black")
+    ball.xspeed = 5
+    ball.yspeed = 5
 
     def update(self):
-        pass
+        x = self.ball.xcor()
+        x += self.ball.xspeed
+        self.ball.setx(x)
+
+        y = self.ball.ycor()
+        y += self.ball.yspeed
+        self.ball.sety(y)
 
 class input:
     def update(self):
@@ -80,3 +88,4 @@ wn.onkeypress(bat.moveLeft, "Left")
 
 while True:
     wn.update()
+    ball.update()
