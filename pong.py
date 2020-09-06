@@ -74,6 +74,18 @@ class ball:
         y += self.ball.yspeed
         self.ball.sety(y)
 
+        if self.ball.xcor() > windowWidth / 2:
+            self.ball.xspeed *= -1
+
+        if self.ball.xcor() < windowWidth / -2:
+            self.ball.xspeed *= -1
+
+        if self.ball.ycor() > windowHeight / 2:
+            self.ball.yspeed *= -1
+
+        if self.ball.ycor() < windowHeight / -2:
+            self.ball.yspeed *= -1
+
 class input:
     def update(self):
         pass
