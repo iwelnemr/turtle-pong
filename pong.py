@@ -52,9 +52,6 @@ class bat2:
         x -= self.bat.speed
         self.bat.setx(x)
 
-    def update(self):
-        pass
-
 class ball:
     ball = turtle.Turtle()
     ball.penup()
@@ -98,6 +95,17 @@ wn.listen()
 wn.onkeypress(bat.moveRight, "Right")
 wn.onkeypress(bat.moveLeft, "Left")
 
+counter = 1
+
 while True:
+    counter += 1
     wn.update()
     ball.update()
+
+    ## game logic
+
+    if bat2.bat.xcor() < bat.bat.xcor() and counter % 15 == 0:
+        bat2.moveRight()
+
+    if bat2.bat.xcor() < bat.bat.xcor() and (counter % 15) == 0:
+        bat2.moveLeft()
